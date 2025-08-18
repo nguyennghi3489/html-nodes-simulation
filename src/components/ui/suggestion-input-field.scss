@@ -1,6 +1,16 @@
+@use "sass:color";
 @import "../../styles/variables";
 
 .suggestion-input-field {
-  flex: 1;
   position: relative;
+
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &:focus {
+      background-color: color.adjust($bg-light, $lightness: -2%);
+    }
+  }
 }

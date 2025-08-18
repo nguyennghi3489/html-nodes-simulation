@@ -6,32 +6,29 @@
   border: 1px solid $border-color;
   border-radius: $radius-base;
   font-family: $font-mono;
-  font-size: $font-md;
 
   h3 {
     margin: 0 0 $spacing-lg 0;
     color: $text-primary;
     font-size: $font-lg;
+    text-align: left;
   }
 }
 
 .property-row {
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
   margin-bottom: $spacing-md;
   padding: $spacing-sm 0;
 }
 
 .property-name {
-  font-weight: bold;
-  min-width: $min-width-label;
-
   &--default {
-    color: $text-property;
+    color: $text-code;
   }
 
   &--custom {
-    color: $text-custom;
+    color: $text-code;
   }
 }
 

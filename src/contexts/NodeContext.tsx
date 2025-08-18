@@ -28,7 +28,6 @@ export const NodeProvider = ({ children, initialNode }: NodeProviderProps) => {
     nodeId: string,
     updates: Partial<TNode>
   ): TNode => {
-    console.log("Updating node", node.id, "with updates", updates);
     if (node.id === nodeId) {
       const updatedNode = { ...node, ...updates };
       // Update selected node if it's the one being updated

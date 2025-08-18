@@ -1,5 +1,6 @@
 import type { TNode } from "../../models/node";
-import { getNodeElement, nodeToCSS } from "../../utils/render";
+import { getNodeElement } from "../../utils/render";
+import { nodeToCSS } from "../../utils/css-properties";
 import { useNodeContext } from "../../hooks/useNodeContext";
 import "./element.scss";
 
