@@ -6,6 +6,13 @@
   outline: none;
   background-color: transparent;
 
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $bg-light;
+    color: $text-secondary;
+    border-color: $border-light;
+  }
+
   &:focus {
     background-color: color.adjust($bg-light, $lightness: -2%);
   }

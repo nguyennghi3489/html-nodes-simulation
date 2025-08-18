@@ -13,4 +13,5 @@ export type TNode = {
   border?: string;
   children: TNode[];
   extraCssProperties?: Record<string, string>;
+  isReadOnly?: boolean;
 };

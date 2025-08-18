@@ -69,8 +69,8 @@ export const CssInspector = ({ node }: Props) => {
   }, [focusedProperty]);
 
   const handleContainerClick = (e: React.MouseEvent) => {
-    // Only add new property if clicking on empty space (container itself)
-    if (e.target === e.currentTarget) {
+    // Only add new property if clicking on empty space (container itself) and node is not read-only
+    if (e.target === e.currentTarget && !currentNode.isReadOnly) {
       addNewCustomProperty();
     }
   };
@@ -78,10 +78,14 @@ export const CssInspector = ({ node }: Props) => {
   const builtInProperties = getBuiltInProperties(currentNode);
 
   return (
-    <div className="container" onClick={handleContainerClick}>
+    <div
+      className={`container${
+        currentNode.isReadOnly ? " container--disabled" : ""
+      }`}
+      onClick={handleContainerClick}
+    >
       <h3>CSS Properties - {currentNode.name}</h3>
       <div>
-        {/* Built-in Properties */}
         {builtInProperties.map((prop) => (
           <div key={prop.key} className="property-row">
             <span className="property-name property-name--default">
@@ -92,12 +96,13 @@ export const CssInspector = ({ node }: Props) => {
               onChange={(value) => {
                 handlePropertyChange(prop.key as keyof TNode, value);
               }}
+              placeholder="Property value"
               suggestions={getCSSPropertyValues(prop.key)}
+              disabled={currentNode.isReadOnly}
             />
           </div>
         ))}
 
-        {/* Custom Properties */}
         {Object.entries(customProperties).map(
           ([propName, propValue], index) => (
             <div key={index} className="property-row">
@@ -111,6 +116,7 @@ export const CssInspector = ({ node }: Props) => {
                 placeholder="Property name"
                 className="property-name property-name--default"
                 autoFocus={focusedProperty === propName}
+                disabled={currentNode.isReadOnly}
               />
               <span className="property-separator">:</span>
               <EditableField
@@ -120,6 +126,7 @@ export const CssInspector = ({ node }: Props) => {
                 }
                 suggestions={getCSSPropertyValues(propName)}
                 placeholder="Property value"
+                disabled={currentNode.isReadOnly}
               />
             </div>
           )

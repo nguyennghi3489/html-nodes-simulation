@@ -75,7 +75,6 @@ export const TreeNode = ({ node, level = 0 }: Props) => {
         )}
         <span className="tree-node__type">{node.type}</span>
         <span className="tree-node__name">{node.name}</span>
-        {node.text && <span className="tree-node__text">"{node.text}"</span>}
       </TreeNodeItem>
 
       {hasChildren && isExpanded && (

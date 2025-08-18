@@ -14,3 +14,17 @@ export const getNodeElement = (type: TNode["type"]) => {
       return "div";
   }
 };
+
+export const wrapInRootNode = (nodes: TNode[]): TNode => {
+  return {
+    id: "root",
+    type: "Div",
+    name: "ROOT_NODE",
+    children: nodes,
+    isReadOnly: true,
+    x: 0,
+    y: 0,
+    width: "100%",
+    height: "100%",
+  };
+};

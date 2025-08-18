@@ -9,8 +9,8 @@ interface EditableFieldProps {
   suggestions?: string[];
   placeholder?: string;
   className?: string;
-  displayValue?: string;
   autoFocus?: boolean;
+  disabled?: boolean;
 }
 
 export const EditableField = ({
@@ -20,8 +20,8 @@ export const EditableField = ({
   suggestions = [],
   placeholder,
   className = "",
-  displayValue,
   autoFocus = false,
+  disabled = false,
 }: EditableFieldProps) => {
   const [isEditing, setIsEditing] = useState(autoFocus);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -41,6 +41,7 @@ export const EditableField = ({
   }, [isEditing]);
 
   const handleClick = () => {
+    if (disabled) return;
     setIsEditing(true);
   };
 
@@ -68,13 +69,12 @@ export const EditableField = ({
   }
 
   return (
-    <input
-      type="text"
+    <span
       className={`editable-field__label ${className}`}
       onClick={handleClick}
-      value={displayValue || value || ""}
-      placeholder={placeholder || "Click to edit"}
-      readOnly
-    />
+      style={{ cursor: disabled ? "not-allowed" : "pointer" }}
+    >
+      {value || placeholder}
+    </span>
   );
 };

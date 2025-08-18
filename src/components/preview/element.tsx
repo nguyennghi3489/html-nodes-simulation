@@ -26,6 +26,7 @@ export const Element = ({ node }: Props) => {
   if (["Div"].includes(node.type)) {
     return (
       <BaseComponent style={style} onClick={handleClick} className={className}>
+        <span className="preview-element__label">{node.name}</span>
         {node.children &&
           node.children.map((child) => <Element key={child.id} node={child} />)}
       </BaseComponent>
@@ -38,6 +39,7 @@ export const Element = ({ node }: Props) => {
       value={node.name}
       onClick={handleClick}
       className={className}
+      placeholder={node.name}
     />
   );
 };
