@@ -1,0 +1,90 @@
+@import "../../styles/variables";
+
+.container {
+  padding: $spacing-xl;
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: $radius-base;
+  font-family: $font-mono;
+  font-size: $font-md;
+
+  h3 {
+    margin: 0 0 $spacing-lg 0;
+    color: $text-primary;
+    font-size: $font-lg;
+  }
+}
+
+.property-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm 0;
+}
+
+.property-name {
+  font-weight: bold;
+  min-width: $min-width-label;
+
+  &--default {
+    color: $text-property;
+  }
+
+  &--custom {
+    color: $text-custom;
+  }
+}
+
+.property-input {
+  padding: $spacing-xs $spacing-sm;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+  font-size: $font-base;
+  font-family: $font-mono;
+  color: $text-code;
+  background-color: $bg-white;
+  min-width: $min-width-input;
+  transition: border-color $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+.custom-property-input {
+  @extend .property-input;
+  margin-right: $spacing-md;
+}
+
+.property-name-input {
+  min-width: $min-width-label;
+  font-weight: bold;
+  color: $text-custom;
+}
+
+.property-separator {
+  margin: 0 $spacing-sm;
+  font-weight: bold;
+  color: $text-secondary;
+}
+
+.section-divider {
+  border-top: 1px solid $border-color;
+  padding-top: $spacing-lg;
+  margin-top: $spacing-lg;
+  position: relative;
+}
+
+.section-title {
+  margin: 0 0 $spacing-md 0;
+  color: $text-secondary;
+  font-size: $font-base;
+  font-weight: 500;
+}
+
+.input-group {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}

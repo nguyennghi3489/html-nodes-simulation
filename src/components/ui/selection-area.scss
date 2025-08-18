@@ -1,0 +1,61 @@
+@use 'sass:color';
+@import '../../styles/variables';
+
+.selection-area {
+  transition: background-color $transition-fast, border-color $transition-fast;
+  
+  &--clickable {
+    cursor: pointer;
+    
+    &:hover:not(.selection-area--selected) {
+      background-color: color.adjust($bg-light, $lightness: -2%);
+    }
+  }
+
+  &--selected {
+    background-color: color.adjust($primary-color, $lightness: 40%);
+    border-color: $primary-color;
+    outline: 2px solid $primary-color;
+    outline-offset: 1px;
+  }
+
+  // Tree variant
+  &--tree {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $radius-base;
+    margin: $spacing-xs 0;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    &.selection-area--even {
+      background-color: $bg-light;
+    }
+
+    &.selection-area--odd {
+      background-color: color.adjust($bg-light, $lightness: -3%);
+    }
+  }
+
+  // Preview variant
+  &--preview {
+    position: relative;
+
+    &:hover:not(.selection-area--selected) {
+      outline: 1px dashed $primary-color;
+      outline-offset: 1px;
+    }
+
+    &.selection-area--selected {
+      outline: 2px solid $primary-color;
+      outline-offset: 1px;
+    }
+  }
+
+  // Default variant
+  &--default {
+    padding: $spacing-sm;
+    border-radius: $radius-sm;
+  }
+}

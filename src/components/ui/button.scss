@@ -1,0 +1,57 @@
+@use "sass:color";
+@import "../../styles/variables";
+
+.btn {
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: $font-base;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+  font-family: $font-sans;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn {
+  background-color: $primary-color;
+  color: $bg-white;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+  }
+
+  &:active {
+    background-color: color.adjust($primary-hover, $lightness: -5%);
+  }
+}
+
+.btn-danger {
+  background-color: $danger-color;
+  color: $bg-white;
+
+  &:hover:not(:disabled) {
+    background-color: $danger-hover;
+  }
+
+  &:active {
+    background-color: color.adjust($danger-hover, $lightness: -5%);
+  }
+}
+
+.btn-small {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-xs;
+}
+
+.btn-large {
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-md;
+}

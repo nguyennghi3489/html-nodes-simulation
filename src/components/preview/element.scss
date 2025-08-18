@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.preview-element {
+  cursor: pointer;
+  transition: outline $transition-fast;
+
+  &:hover:not(.preview-element--selected) {
+    outline: 1px dashed $primary-color;
+    outline-offset: 1px;
+  }
+
+  &--selected {
+    outline: 2px solid $primary-color;
+    outline-offset: 1px;
+  }
+}

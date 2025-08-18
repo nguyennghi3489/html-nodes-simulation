@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.tree-toggle {
+  font-size: $font-base;
+  color: $text-secondary;
+  user-select: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xs;
+  border-radius: $radius-sm;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba($text-secondary, 0.1);
+  }
+}

@@ -1,0 +1,38 @@
+@use "sass:color";
+@import "../../styles/variables";
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $bg-white;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+  max-height: $max-height-dropdown;
+  overflow-y: auto;
+  z-index: $z-dropdown;
+  font-size: $font-sm;
+  box-shadow: $shadow-sm;
+  margin-top: 1px;
+}
+
+.dropdown-item {
+  padding: $spacing-sm $spacing-md;
+  cursor: pointer;
+  border-bottom: 1px solid $border-divider;
+  transition: background-color $transition-fast;
+  color: $text-primary;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+
+  &:active {
+    background-color: color.adjust($bg-hover, $lightness: -3%);
+  }
+}
