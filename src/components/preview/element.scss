@@ -14,17 +14,22 @@
     outline-offset: 1px;
   }
 
+  &--dragging {
+    opacity: $_opacity-medium;
+    z-index: $_z-index-overlay;
+  }
+
   &__label {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    font-size: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 1px 4px;
-    border-radius: 2px;
+    top: $spacing-xs;
+    left: $spacing-xs;
+    font-size: $_font-xs;
+    background-color: $_bg-overlay;
+    color: $_text-inverse;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $_radius-xs;
     pointer-events: none;
-    z-index: 10;
-    font-family: monospace;
+    z-index: $_z-index-tooltip;
+    font-family: $font-mono;
   }
 }

@@ -3,7 +3,7 @@ export type TNode = {
   x: number;
   y: number;
   name: string;
-  type: "Div" | "Input" | "Image" | "Button";
+  type: string;
   width: number | string;
   height: number | string;
   display?: string;

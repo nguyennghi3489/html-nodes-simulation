@@ -41,7 +41,10 @@ export const getBuiltInProperties = (node: TNode) => [
   },
 ];
 
-export const nodeToCSS = (node: TNode): React.CSSProperties => {
+export const nodeToCSS = (
+  node: TNode,
+  isRoot: boolean = false
+): React.CSSProperties => {
   const baseStyles = {
     position: "absolute",
     left: `${node.x}px`,
@@ -52,6 +55,7 @@ export const nodeToCSS = (node: TNode): React.CSSProperties => {
     backgroundColor: node.background,
     color: node.color,
     border: node.border,
+    overflow: isRoot ? "auto" : "hidden",
   };
 
   // Merge extraCssProperties if they exist

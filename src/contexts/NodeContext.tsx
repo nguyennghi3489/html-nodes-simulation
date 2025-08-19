@@ -46,6 +46,7 @@ export const NodeProvider = ({ children, initialNode }: NodeProviderProps) => {
   };
 
   const updateNode = (nodeId: string, updates: Partial<TNode>) => {
+    console.log("Updating node:", nodeId, updates);
     setRootNode((prevRoot) => updateNodeRecursively(prevRoot, nodeId, updates));
   };
 

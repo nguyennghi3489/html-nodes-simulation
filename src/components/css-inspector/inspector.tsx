@@ -7,7 +7,7 @@ import {
 } from "../../utils/css-properties";
 import { useNodeContext } from "../../hooks/useNodeContext";
 import { EditableField } from "../ui/editable-field";
-import "./css-inspector.scss";
+import "./inspector.scss";
 
 interface Props {
   node: TNode;

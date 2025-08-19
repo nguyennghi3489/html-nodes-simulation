@@ -1,4 +1,6 @@
-export const ROOT_NODE = {
+import type { TNode } from "../models/node";
+
+export const ROOT_NODE: TNode = {
   id: "root-div",
   x: 0,
   y: 0,
@@ -9,4 +11,5 @@ export const ROOT_NODE = {
   display: "block",
   background: "#f0f0f0",
   isReadOnly: true,
+  children: [],
 };

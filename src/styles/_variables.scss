@@ -13,6 +13,7 @@ $text-custom: #e83e8c;
 $bg-light: #f8f9fa;
 $bg-white: #fff;
 $bg-hover: #f8f9fa;
+$_bg-overlay: rgba(0, 0, 0, 0.7);
 
 // Border colors
 $border-color: #dee2e6;
@@ -33,6 +34,7 @@ $font-sm: 11px;
 $font-base: 12px;
 $font-md: 14px;
 $font-lg: 16px;
+$_font-xs: 10px;
 
 // Font families
 $font-mono: monospace;
@@ -41,6 +43,7 @@ $font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 // Border radius
 $radius-sm: 2px;
 $radius-base: 4px;
+$_radius-xs: 2px;
 
 // Shadows
 $shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -49,6 +52,8 @@ $shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
 // Z-index
 $z-dropdown: 1000;
 $z-modal: 1050;
+$_z-index-overlay: 999;
+$_z-index-tooltip: 10;
 
 // Transitions
 $transition-fast: 0.2s ease;
@@ -58,3 +63,10 @@ $transition-base: 0.3s ease;
 $min-width-label: 120px;
 $min-width-input: 100px;
 $max-height-dropdown: 150px;
+
+// Opacity values
+$opacity-medium: 0.5;
+$_opacity-medium: 0.5;
+
+// Text colors
+$_text-inverse: white;
