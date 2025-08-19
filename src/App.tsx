@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Preview } from "./components/preview";
 import { TreeView } from "./components/tree-view";
 import { NodeProvider } from "./contexts/NodeContext";
@@ -15,7 +15,7 @@ const AppContent = () => {
       <div className="app-column">
         <TreeView node={rootNode} />
       </div>
-      <div className="app-column" style={{ flex: 2 }}>
+      <div className="app-column app-column__previewer">
         <Preview node={rootNode} />
       </div>
       <div className="app-column css-inspector-column">
