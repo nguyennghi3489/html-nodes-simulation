@@ -90,7 +90,6 @@ src/
 The application includes two example datasets:
 
 - `exampleNodes1`: Simple layout with header, content, and footer
-- `exampleNodes2`: Complex layout with navigation, features, and sidebar
 
 ## Development
 
