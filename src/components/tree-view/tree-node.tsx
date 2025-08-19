@@ -4,6 +4,8 @@ import { useNodeContext } from "../../hooks/useNodeContext";
 import { TreeToggle } from "../ui/tree-toggle";
 import "./tree-node.scss";
 
+const INDENT_SPACING = 10;
+
 interface TreeNodeItemProps {
   children: ReactNode;
   isSelected?: boolean;
@@ -43,7 +45,7 @@ export const TreeNode = ({ node, level = 0 }: Props) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const { selectedNode, setSelectedNode } = useNodeContext();
   const hasChildren = node.children && node.children.length > 0;
-  const indent = level * 20;
+  const indent = level * INDENT_SPACING;
   const isSelected = selectedNode?.id === node.id;
 
   const toggleExpanded = () => {
