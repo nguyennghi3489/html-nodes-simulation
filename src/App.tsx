@@ -2,7 +2,7 @@ import "./App.css";
 import { Preview } from "./components/preview";
 import { TreeView } from "./components/tree-view";
 import { NodeProvider } from "./contexts/NodeContext";
-import { exampleNodes2 } from "./data/mock-nodes";
+import { exampleNodes1 } from "./data/mock-nodes";
 import { useNodeContext } from "./hooks/useNodeContext";
 import { wrapInRootNode } from "./utils/render";
 import { InspectorView } from "./components/css-inspector";
@@ -26,7 +26,7 @@ const AppContent = () => {
 };
 
 function App() {
-  const nodeData = wrapInRootNode(exampleNodes2);
+  const nodeData = wrapInRootNode(exampleNodes1);
   return (
     <NodeProvider initialNode={nodeData}>
       <AppContent />
